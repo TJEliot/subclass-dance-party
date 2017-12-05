@@ -8,8 +8,8 @@ var makeGrowingDancer = function(top, left, timeBetweenSteps) {
 makeGrowingDancer.prototype = new makeDancer;
 
 makeGrowingDancer.prototype.step = function() {
-  makeSlidingDancer.prototype.step.call(this);
   this.$node.addClass('stretchyDancer');
+  makeSlidingDancer.prototype.step.call(this);
 };
 
 makeGrowingDancer.prototype.constructor = makeGrowingDancer;

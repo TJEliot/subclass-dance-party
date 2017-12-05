@@ -27,9 +27,11 @@ makeDancer.prototype.lineUp = function () {
   // };  
  // this.$node.css(styleSettings);
   this.setPosition($('body').height() * 0.5, $('body').width() * 0.5);
-  $('.dancer').stop();
+  //$('.dancer').stop();
+  this.$node.removeClass('dancer');
 };
 
 makeDancer.prototype.breakLine = function() {
+  this.$node.addClass('dancer');
   this.setPosition($('body').height() * Math.random(), $('body').width() * Math.random());
 };
