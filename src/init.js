@@ -15,6 +15,26 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
+     
+ /*    
+     // class mammal
+          has fur
+        subclass anteater
+          has tail
+          
+        joe is an anteater
+        joe has a tail
+        joe has fur?
+        
+        class dancer
+          function step
+        subclass growingDancer
+        
+        thisDancer is a growingDancer
+        thisDancer is a dancer
+        thisDancer has the step function
+     
+   */  
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     // get the maker function for the kind of dancer we're supposed to make
@@ -29,10 +49,15 @@ $(document).ready(function() {
     );
     //    console.log(JSON.stringify(dancer));
     window.dancers.push(dancer);
-    $('body').append(dancer.$node);
-   
+    $('body').append(dancer.$node);   
   });
-  $('.lineUpButton').on('click', function(event) {
+  
+  $('body').on('mouseenter', '.dancer', function() {
+    this.remove();
+  });
+  
+  $('.lineUpButton').on('click', function() {
+    console.log('clicked on the line up button');
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].lineUp();
     }
@@ -41,6 +66,13 @@ $(document).ready(function() {
     window.dancers.forEach(function(dancer) {
       // Calls the breakLine method for each dancer
       dancer.breakLine();
+    });
+  });
+  $('.stretchyDancer').on('click', function() {
+    console.log('clicked on a dancer');
+    window.dancers.forEach(function(dancer) {
+      dancer.lineUp();
+      //  dancer.removeClass('.stretchyDancer');
     });
   });
 });

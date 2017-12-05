@@ -2,15 +2,14 @@
 var makeDancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
   // use jQuery to create an HTML <span> tag
-  this.$node = $('<span class="dancer" "stretchyDancer" "blinkyDancer"></span>');
+  this.$node = $('<span class="dancer" "stretchyDancer" "blinkyDancer" "button"></span>');
   this.$dance = $('<span class = "stretchyDancer"></span>');
   this.step();
   this.setPosition(top, left);
-  this.moving = true;
 };
 
 makeDancer.prototype.step = function() {
-    setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
@@ -22,15 +21,15 @@ makeDancer.prototype.setPosition = function(top, left) {
 };
 
 makeDancer.prototype.lineUp = function () {
-  var styleSettings = {
-    top: $('body').height() * 0.5,
-    left: $('body').width() * 0.5
-  };  
-//  this['moving'] = false;
-  //console.log(this['moving']);
-  this.$node.css(styleSettings);
+  // var styleSettings = {
+  //   top: $('body').height() * 0.5,
+  //   left: $('body').width() * 0.5
+  // };  
+ // this.$node.css(styleSettings);
+  this.setPosition($('body').height() * 0.5, $('body').width() * 0.5);
+  $('.dancer').stop();
 };
+
 makeDancer.prototype.breakLine = function() {
-  // Call setPosition with random X and Y coordinates
   this.setPosition($('body').height() * Math.random(), $('body').width() * Math.random());
 };
