@@ -28,13 +28,14 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     //    console.log(JSON.stringify(dancer));
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
-    window['dancers'].push(dancer);
+   
   });
-  $('lineUpButton').on('click', function(event) {
-    window.dancers.forEach(function(dancer) {
-      this.setPosition(0, 0);
-    });
+  $('.lineUpButton').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUp();
+    }
   });
 });
 

@@ -9,9 +9,13 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton, .lineUpButton{
+.title, .addDancerButton{
   padding:5px 12px;
   float:right;
+}
+.lineUpButton{
+  padding: 5px 12px;
+  float: left;
 }
 .topbar{
   height:32px;
@@ -21,8 +25,8 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .stretchyDancer{
-  height: 45px;
-  width: 45px;
+  height: 50px;
+  width: 50px;
   margin: 0 auto;
   animation-name: stretch;
   animation-duration: 1.5s; 
@@ -32,20 +36,29 @@ body, a:link, a:visited, a:active{
 }
 @keyframes stretch {
   0% {
-    transform: scale(.1);
-    border-color: blue;
+    transform: scale(.4);
+    border-color: red;
+    border-radius: 40px;
   }
   25%{
-    transform: scale(0.5);
-    border-color: red;
+    transform: scale(0.6);
+    border-color: yellow;
+    border-radius: 0px;
   }
   50% {
-    transform: scale(0.9);
+    transform: scale(1.2);
+    border-color: green;
+    border-radius: 40px;
+  }
+  75% {
+    transform: scale(2);
     border-color: blue;
+    border-radius: 0px;
   }
   100% {
-    transform: scale(1.3);
-    border-color: red;
+    transform: scale(2.5);
+    border-color: darkred;
+    border-radius: 40px;
   }
 }
 .dancer{

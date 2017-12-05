@@ -22,7 +22,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 //  return blinkyDancer;
 };
 
-makeBlinkyDancer.prototype = new makeDancer;
+//makeBlinkyDancer.prototype = new makeDancer;
 //makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
 makeBlinkyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);

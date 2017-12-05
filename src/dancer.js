@@ -6,10 +6,12 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.$dance = $('<span class = "stretchyDancer"></span>');
   this.step();
   this.setPosition(top, left);
+  this.moving = true;
 };
 
 makeDancer.prototype.step = function() {
-  setTimeout(this.step.bind(this), this.timeBetweenSteps);
+    setTimeout(function() {if (this['moving']){this.step.bind(this)}}, this.timeBetweenSteps);
+  
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
@@ -21,9 +23,11 @@ makeDancer.prototype.setPosition = function(top, left) {
 };
 
 makeDancer.prototype.lineUp = function () {
-  alert('lining up');
   var styleSettings = {
-    left: 0
-  };
+    top: $('body').height() * 0.5,
+    left: $('body').width() * 0.5
+  };  
+//  this['moving'] = false;
+  //console.log(this['moving']);
   this.$node.css(styleSettings);
 };
