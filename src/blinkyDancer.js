@@ -27,12 +27,12 @@ makeBlinkyDancer.prototype = new makeDancer;
 //makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
 makeBlinkyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
-  this.$node.css("border", "10px solid #CCFF00");
+  this.$node.css("border", "10px solid #50BFE6");
   this.$node.toggle();
 };
 makeBlinkyDancer.prototype.lineUp = function () {
   var styleSettings = {
-    left: 0
+    left: .75
   };
   this.$node.css(styleSettings);
 };
