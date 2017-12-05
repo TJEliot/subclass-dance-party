@@ -9,7 +9,7 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .lineUpButton{
   padding:5px 12px;
   float:right;
 }
@@ -19,6 +19,34 @@ body, a:link, a:visited, a:active{
 }
 .title{
   background-color: #777;
+}
+.stretchyDancer{
+  height: 45px;
+  width: 45px;
+  margin: 0 auto;
+  animation-name: stretch;
+  animation-duration: 1.5s; 
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+@keyframes stretch {
+  0% {
+    transform: scale(.1);
+    border-color: blue;
+  }
+  25%{
+    transform: scale(0.5);
+    border-color: red;
+  }
+  50% {
+    transform: scale(0.9);
+    border-color: blue;
+  }
+  100% {
+    transform: scale(1.3);
+    border-color: red;
+  }
 }
 .dancer{
   border:10px solid red;
