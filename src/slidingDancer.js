@@ -9,6 +9,7 @@ makeSlidingDancer.prototype = new makeDancer;
 
 makeSlidingDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
+  this.$node.css("border", "10px solid #CCFF00");
   var whereTo = Math.random();
   if (whereTo < 0.25) {
     this.$node.animate({'marginLeft': 500}, 500);
@@ -19,6 +20,12 @@ makeSlidingDancer.prototype.step = function() {
   } else {
     this.$node.animate({'marginTop': 100}, 500);
   }
+};
+makeSlidingDancer.prototype.lineUp = function () {
+  var styleSettings = {
+    left: 1
+  };
+  this.$node.css(styleSettings);
 };
 
 makeSlidingDancer.prototype.constructor = makeSlidingDancer;

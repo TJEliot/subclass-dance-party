@@ -1,9 +1,14 @@
 body, html{
   height:100%;
+   background-image: url(https://media.giphy.com/media/M4t2UqCJFuuJy/giphy.gif); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 body{
   margin: 0px;
-  background-color:#444;
+  /* background-color:#444;*/
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -17,12 +22,22 @@ body, a:link, a:visited, a:active{
   padding: 5px 12px;
   float: left;
 }
+.freeThemUpButton{
+  padding: 5px 12px;
+  float: left;
+}
 .topbar{
   height:32px;
-  background-color: #555;
+  background-color: black;
 }
 .title{
-  background-color: #777;
+  background-color: black;
+  text-align: center;
+}
+.blinkyDancer{
+  border: 10px solid blue;
+  border-radius:10px;
+  position:absolute;
 }
 .stretchyDancer{
   height: 50px;
@@ -37,27 +52,27 @@ body, a:link, a:visited, a:active{
 @keyframes stretch {
   0% {
     transform: scale(.4);
-    border-color: red;
+    border-color:  #FF355E;
     border-radius: 40px;
   }
   25%{
     transform: scale(0.6);
-    border-color: yellow;
+    border-color: #FFFF66;
     border-radius: 0px;
   }
   50% {
     transform: scale(1.2);
-    border-color: green;
+    border-color:  #FF9933;
     border-radius: 40px;
   }
   75% {
     transform: scale(2);
-    border-color: blue;
+    border-color: #FF00CC;
     border-radius: 0px;
   }
   100% {
     transform: scale(2.5);
-    border-color: darkred;
+    border-color: #A7F432;
     border-radius: 40px;
   }
 }

@@ -2,7 +2,7 @@
 var makeDancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
   // use jQuery to create an HTML <span> tag
-  this.$node = $('<span class="dancer" "stretchyDancer"></span>');
+  this.$node = $('<span class="dancer" "stretchyDancer" "blinkyDancer"></span>');
   this.$dance = $('<span class = "stretchyDancer"></span>');
   this.step();
   this.setPosition(top, left);
@@ -10,8 +10,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function() {
-    setTimeout(function() {if (this['moving']){this.step.bind(this)}}, this.timeBetweenSteps);
-  
+    setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
@@ -30,4 +29,8 @@ makeDancer.prototype.lineUp = function () {
 //  this['moving'] = false;
   //console.log(this['moving']);
   this.$node.css(styleSettings);
+};
+makeDancer.prototype.breakLine = function() {
+  // Call setPosition with random X and Y coordinates
+  this.setPosition($('body').height() * Math.random(), $('body').width() * Math.random());
 };

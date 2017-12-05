@@ -37,5 +37,11 @@ $(document).ready(function() {
       window.dancers[i].lineUp();
     }
   });
+  $('.freeThemUpButton').on('click', function() {
+    window.dancers.forEach(function(dancer) {
+      // Calls the breakLine method for each dancer
+      dancer.breakLine();
+    });
+  });
 });
 
