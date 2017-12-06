@@ -8,7 +8,7 @@ describe('growingDancer', function() {
     console.log(growingDancer);
     console.log(growingDancer.__proto__['$node'][0]);
   });
-  it('should be a subClass of makeDancer', function() {
-    expect(growingDancer.__proto__).to.equal('makeDancer');
+  it('should be animated', function() {
+    expect(growingDancer.$node.hasClass('stretchyDancer')).to.equal(true);
   });
 });
