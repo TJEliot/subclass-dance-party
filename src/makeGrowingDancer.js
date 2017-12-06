@@ -5,18 +5,19 @@ var makeGrowingDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, this.top, this.left, this.timeBetweenSteps);
 };
 
+var running = true;
+
 makeGrowingDancer.prototype = new makeDancer;
 
 makeGrowingDancer.prototype.step = function() {
   this.$node.addClass('stretchyDancer');
-  if (!this.$node.hasClass('stationary')) { 
+  if (running) { 
     makeSlidingDancer.prototype.step.call(this);
   }
 };
 
 makeGrowingDancer.prototype.lineUp = function () {
-  //this.$node.removeClass('stretchyDancer');
+  running = false;
   this.setPosition($('body').height() * 0.5, $('body').width() * 0.5);
   this.$node.addClass('stationary');
-  
 };

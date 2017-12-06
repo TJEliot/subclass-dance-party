@@ -27,6 +27,7 @@ makeDancer.prototype.lineUp = function () {
 makeDancer.prototype.breakLine = function() {
   this.setPosition($('body').height() * Math.random(), $('body').width() * Math.random());
   //this.$node.removeClass('stationary');
+  running = true;
   this.step();
 };
 
