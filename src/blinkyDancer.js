@@ -12,10 +12,12 @@ makeBlinkyDancer.prototype.step = function() {
   this.$node.css("border", "10px solid #50BFE6");
   this.$node.toggle();
 };
+
 makeBlinkyDancer.prototype.lineUp = function () {
   var styleSettings = {
     left: .75
   };
   this.$node.css(styleSettings);
 };
+
 makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;

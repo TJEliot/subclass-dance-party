@@ -47,7 +47,6 @@ $(document).ready(function() {
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
-    //    console.log(JSON.stringify(dancer));
     window.dancers.push(dancer);
     $('body').append(dancer.$node);   
   });
@@ -64,16 +63,9 @@ $(document).ready(function() {
   });
   $('.freeThemUpButton').on('click', function() {
     window.dancers.forEach(function(dancer) {
-      // Calls the breakLine method for each dancer
       dancer.breakLine();
     });
   });
-  $('.stretchyDancer').on('click', function() {
-    console.log('clicked on a dancer');
-    window.dancers.forEach(function(dancer) {
-      dancer.lineUp();
-      //  dancer.removeClass('.stretchyDancer');
-    });
-  });
+
 });
 
