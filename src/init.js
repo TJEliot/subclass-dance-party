@@ -15,32 +15,9 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
-     
- /*    
-     // class mammal
-          has fur
-        subclass anteater
-          has tail
-          
-        joe is an anteater
-        joe has a tail
-        joe has fur?
-        
-        class dancer
-          function step
-        subclass growingDancer
-        
-        thisDancer is a growingDancer
-        thisDancer is a dancer
-        thisDancer has the step function
-     
-   */  
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
-    // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
-
-    // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
@@ -56,11 +33,11 @@ $(document).ready(function() {
   });
   
   $('.lineUpButton').on('click', function() {
-    console.log('clicked on the line up button');
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].lineUp();
     }
   });
+  
   $('.freeThemUpButton').on('click', function() {
     window.dancers.forEach(function(dancer) {
       dancer.breakLine();

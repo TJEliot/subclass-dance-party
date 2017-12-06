@@ -7,12 +7,12 @@ var makeDestroyer = function(top, left, timeBetweenSteps) {
   this.setPosition(top, left);
 };
 
+//makeDestroyer.prototype = new makeDancer;
 
 makeDestroyer.prototype.step = function() {
   this.$node.removeClass('dancer');
   this.$node.css('border', '20px solid red');
   var dancers = window.document.getElementsByClassName('dancer');
-  //console.log(dancers);
   for (var i = 0; i < dancers.length; i++) {
     var whereWidth = Math.floor(parseFloat(dancers[i].style.left.slice(0, -2)));
     var whereHeight = Math.floor(parseFloat(dancers[i].style.top.slice(0, -2)));
@@ -37,7 +37,6 @@ makeDestroyer.prototype.setPosition = function(top, left) {
 
 makeDestroyer.prototype.lineUp = function () {
   this.setPosition($('body').height() * 0.5, $('body').width() * 0.5);
-  this.$node.removeClass('dancer');
 };
 
 makeDestroyer.prototype.breakLine = function() {
