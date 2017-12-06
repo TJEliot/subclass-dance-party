@@ -15,7 +15,8 @@ makeBlinkyDancer.prototype.step = function() {
 
 makeBlinkyDancer.prototype.lineUp = function () {
   var styleSettings = {
-    left: .75
+    left: 1,
+    top: 1
   };
   this.$node.css(styleSettings);
 };
